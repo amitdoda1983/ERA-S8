@@ -276,7 +276,7 @@ class Cifar10_GroupNorm(nn.Module):
             nn.Conv2d(in_channels=24, out_channels=8, kernel_size=(1, 1), padding=0, bias=False),
         ) # output_size = 32
         # POOL  P1
-        self.pool1 = nn.MaxPool2d(2, 2) # output_size = 16
+        self.pool1 = nn.MaxPool2d(2, 2) # output_size = 32
 
         # CONVOLUTION BLOCK C4
         self.convblockC4 = nn.Sequential(
@@ -306,7 +306,7 @@ class Cifar10_GroupNorm(nn.Module):
           # TRANSITION BLOCK c7
         self.convblockc7 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=8, kernel_size=(1, 1), padding=0, bias=False),
-        ) # output_size = 10
+        ) # output_size = 16
         # POOL  P2
         self.pool2 = nn.MaxPool2d(2, 2) # output_size = 8
 
@@ -317,7 +317,7 @@ class Cifar10_GroupNorm(nn.Module):
             nn.ReLU(),
             nn.GroupNorm(4,32),
             nn.Dropout(dropout_value)
-        ) # output_size = 6
+        ) # output_size = 8
 
         # CONVOLUTION BLOCK C9
         self.convblockC9 = nn.Sequential(
@@ -325,7 +325,7 @@ class Cifar10_GroupNorm(nn.Module):
             nn.ReLU(),
             nn.GroupNorm(4,32),
             nn.Dropout(dropout_value)
-        ) # output_size = 4
+        ) # output_size = 8
 
         # CONVOLUTION BLOCK C10
         self.convblockC10 = nn.Sequential(
@@ -333,7 +333,7 @@ class Cifar10_GroupNorm(nn.Module):
             nn.ReLU(),
             nn.GroupNorm(4,32),
             nn.Dropout(dropout_value)
-        ) # output_size = 2
+        ) # output_size = 8
 
 
         # GAP BLOCK
@@ -434,7 +434,7 @@ class Cifar10_LayerNorm(nn.Module):
           # TRANSITION BLOCK c7
         self.convblockc7 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=8, kernel_size=(1, 1), padding=0, bias=False),
-        ) # output_size = 10
+        ) # output_size = 16
         # POOL  P2
         self.pool2 = nn.MaxPool2d(2, 2) # output_size = 8
 
@@ -445,7 +445,7 @@ class Cifar10_LayerNorm(nn.Module):
             nn.ReLU(),
             nn.LayerNorm([32, 8, 8],elementwise_affine=False),
             nn.Dropout(dropout_value)
-        ) # output_size = 6
+        ) # output_size = 8
 
         # CONVOLUTION BLOCK C9
         self.convblockC9 = nn.Sequential(
@@ -453,7 +453,7 @@ class Cifar10_LayerNorm(nn.Module):
             nn.ReLU(),
             nn.LayerNorm([32, 8, 8],elementwise_affine=False),
             nn.Dropout(dropout_value)
-        ) # output_size = 4
+        ) # output_size = 8
 
         # CONVOLUTION BLOCK C10
         self.convblockC10 = nn.Sequential(
@@ -461,7 +461,7 @@ class Cifar10_LayerNorm(nn.Module):
             nn.ReLU(),
             nn.LayerNorm([32, 8, 8],elementwise_affine=False),
             nn.Dropout(dropout_value)
-        ) # output_size = 2
+        ) # output_size = 8
 
 
         # GAP BLOCK
@@ -562,7 +562,7 @@ class Cifar10_BatchNorm(nn.Module):
           # TRANSITION BLOCK c7
         self.convblockc7 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=8, kernel_size=(1, 1), padding=0, bias=False),
-        ) # output_size = 10
+        ) # output_size = 16
         # POOL  P2
         self.pool2 = nn.MaxPool2d(2, 2) # output_size = 8
 
@@ -573,7 +573,7 @@ class Cifar10_BatchNorm(nn.Module):
             nn.ReLU(),
             nn.BatchNorm2d(32),
             nn.Dropout(dropout_value)
-        ) # output_size = 6
+        ) # output_size = 8
 
         # CONVOLUTION BLOCK C9
         self.convblockC9 = nn.Sequential(
@@ -581,7 +581,7 @@ class Cifar10_BatchNorm(nn.Module):
             nn.ReLU(),
             nn.BatchNorm2d(32),
             nn.Dropout(dropout_value)
-        ) # output_size = 4
+        ) # output_size = 8
 
         # CONVOLUTION BLOCK C10
         self.convblockC10 = nn.Sequential(
@@ -589,7 +589,7 @@ class Cifar10_BatchNorm(nn.Module):
             nn.ReLU(),
             nn.BatchNorm2d(32),
             nn.Dropout(dropout_value)
-        ) # output_size = 2
+        ) # output_size = 8
 
 
         # GAP BLOCK
