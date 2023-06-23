@@ -77,3 +77,7 @@ Test set:  Accuracy: 8066/10000 (80.66%)
 ![image](https://github.com/amitdoda1983/ERA-S8/assets/37932202/28b43c28-dac7-4bf4-924c-1e8be5876e41)
 
 
+# Conclusion on Normaliztion:
+As observed, the layer and group norm both gave almost similar convergence with a final test accuracy in the range of 77 %
+The batch norm is a clear winner with faster convergence rate and final test accuracy of 80 %
+Between layer norm and group norm, group norm seemed better as it had better and consistent results.
