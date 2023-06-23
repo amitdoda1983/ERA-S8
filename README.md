@@ -35,7 +35,7 @@ Test set:  Accuracy: 7784/10000 (77.84%)
 
 ### The model network summary :
 
-we have made use of padding to keep the channel size consistent which allows to have the skip connections.There are 2 skip connections in this network.The total number of parameters are 48552
+we have made use of padding to keep the channel size consistent which allows to have the skip connections.There are 2 skip connections in this network.The total number of parameters are 48072
 
 ![image](https://github.com/amitdoda1983/ERA-S8/assets/37932202/facb418c-ac6f-4a71-8de8-dcb8b428c6f0)
 
